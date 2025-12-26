@@ -5,33 +5,24 @@ const ServerSelector = () => {
     const { serverType, setServerType } = useServer();
 
     return (
-        <div style={{
-            position: 'absolute',
-            top: '1rem',
-            right: '1rem',
-            background: 'rgba(0,0,0,0.5)',
-            padding: '0.5rem',
-            borderRadius: '8px',
-            display: 'flex',
-            gap: '0.5rem',
-            alignItems: 'center',
-            zIndex: 100
-        }}>
-            <span style={{ fontSize: '0.8rem', color: '#ccc' }}>Server:</span>
-            <select
-                value={serverType}
-                onChange={(e) => setServerType(e.target.value)}
-                style={{
-                    background: '#333',
-                    color: 'white',
-                    border: '1px solid #555',
-                    borderRadius: '4px',
-                    padding: '0.2rem 0.5rem'
-                }}
-            >
-                <option value="mysql">MySQL (v1)</option>
-                <option value="redis">Redis (v2)</option>
-            </select>
+        <div style={{ marginBottom: '2rem' }}>
+            <h2 style={{ color: '#888', marginBottom: '0.8rem', fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                서버 선택
+            </h2>
+            <div className="server-selector-container">
+                <button
+                    className={`server-option ${serverType === 'mysql' ? 'active' : ''}`}
+                    onClick={() => setServerType('mysql')}
+                >
+                    MySQL (v1)
+                </button>
+                <button
+                    className={`server-option ${serverType === 'redis' ? 'active' : ''}`}
+                    onClick={() => setServerType('redis')}
+                >
+                    Redis (v2)
+                </button>
+            </div>
         </div>
     );
 };

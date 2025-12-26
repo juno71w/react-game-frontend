@@ -50,7 +50,7 @@ const Leaderboard = ({ onRetry, viewMode = 'global', currentUserName = null }) =
             <table className="leaderboard-table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>순위</th>
                         <th>이름</th>
                         <th>기록 (ms)</th>
                     </tr>
@@ -73,7 +73,7 @@ const Leaderboard = ({ onRetry, viewMode = 'global', currentUserName = null }) =
                     <table className="leaderboard-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>순위</th>
                                 <th>이름</th>
                                 <th>기록 (ms)</th>
                             </tr>
@@ -81,7 +81,7 @@ const Leaderboard = ({ onRetry, viewMode = 'global', currentUserName = null }) =
                         <tbody>
                             {myRankData.map((record) => (
                                 <tr key={record.id} className={currentUserName === record.name ? 'my-rank' : ''}>
-                                    <td>{record.id}</td>
+                                    <td>{record.rank}</td>
                                     <td>{record.name}</td>
                                     <td>{record.score}</td>
                                 </tr>
